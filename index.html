@@ -1,101 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix </title>
-    <style>
-        body {
-            background-color: #141414;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* Netflix Clone CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            background: black;
-        }
+    body {
+      background-color: #111;
+      color: #fff;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: red;
-        }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #141414;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .hero {
-            text-align: center;
-            padding: 50px;
-            background-image: url('hero-bg.jpg');
-            background-size: cover;
-        }
+    .logo {
+      color: #e50914;
+      font-size: 28px;
+      font-weight: bold;
+    }
 
-        .hero-content h1 {
-            font-size: 36px;
-            margin: 0;
-        }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-        .movie-grid {
-            padding: 30px;
-            display: flex;
-            overflow-x: auto;
-        }
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
 
-        .movies img {
-            width: 150px;
-            margin: 10px;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
+    .nav-links li a:hover {
+      color: #e50914;
+    }
 
-        .movies img:hover {
-            transform: scale(1.1);
-        }
+    /* Hero */
+    .hero {
+      height: 90vh;
+      background: url('https://assets.nflxext.com/ffe/siteui/vlv3/6e16c407-92a0-4f82-987b-55807c35eb67/ce3de7ba-973d-4dff-b267-1357c2b37384/US-en-20240415-popsignuptwoweeks-perspective_alpha_website_small.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      padding-left: 60px;
+      position: relative;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: black;
-        }
-    </style>
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background-color: #e50914;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background-color: #f40612;
+    }
+
+    /* Movie Section */
+    .movies {
+      padding: 40px 60px;
+    }
+
+    .movies h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .movie-row {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding-bottom: 10px;
+    }
+
+    .movie-row img {
+      width: 200px;
+      height: 300px;
+      border-radius: 8px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .movie-row img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #141414;
+      color: #bbb;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
+  <header class="navbar">
+    <div class="logo">NETFLIX</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header class="navbar">
-        <div class="logo">Netflix Clone</div>
-        <input type="text" placeholder="Search..." id="search">
-        <div class="profile">Profile</div>
-    </header>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Unlimited movies, TV shows, and more.</h1>
+      <p>Watch anywhere. Cancel anytime.</p>
+      <button class="btn">Watch Now</button>
+    </div>
+  </section>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Featured Movie</h1>
-            <p>A thrilling adventure awaits you!</p>
-            <button>Watch Now</button>
-        </div>
-    </section>
+  <section class="movies">
+    <h2>Trending Now</h2>
+    <div class="movie-row">
+      <img src="https://via.placeholder.com/200x300" alt="Movie 1" />
+      <img src="https://via.placeholder.com/200x300" alt="Movie 2" />
+      <img src="https://via.placeholder.com/200x300" alt="Movie 3" />
+      <img src="https://via.placeholder.com/200x300" alt="Movie 4" />
+      <img src="https://via.placeholder.com/200x300" alt="Movie 5" />
+    </div>
+  </section>
 
-    <section class="movie-grid">
-        <h2>Trending Now</h2>
-        <div class="movies">
-            <img src="movie1.jpg" alt="Movie 1">
-            <img src="movie2.jpg" alt="Movie 2">
-            <img src="movie3.jpg" alt="Movie 3">
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 Netflix Clone | Privacy | Terms</p>
-    </footer>
-
-    <script>
-        document.getElementById('search').addEventListener('input', function() {
-            alert('Search feature coming soon!');
-        });
-    </script>
-
+  <footer>
+    <p>© 2025 Netflix Clone | Made for learning</p>
+  </footer>
 </body>
 </html>
