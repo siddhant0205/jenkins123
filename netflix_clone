@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <style>
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background: black;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .movie-grid {
+            padding: 30px;
+            display: flex;
+            overflow-x: auto;
+        }
+
+        .movies img {
+            width: 150px;
+            margin: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .movies img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Netflix Clone</div>
+        <input type="text" placeholder="Search..." id="search">
+        <div class="profile">Profile</div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Featured Movie</h1>
+            <p>A thrilling adventure awaits you!</p>
+            <button>Watch Now</button>
+        </div>
+    </section>
+
+    <section class="movie-grid">
+        <h2>Trending Now</h2>
+        <div class="movies">
+            <img src="movie1.jpg" alt="Movie 1">
+            <img src="movie2.jpg" alt="Movie 2">
+            <img src="movie3.jpg" alt="Movie 3">
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Netflix Clone | Privacy | Terms</p>
+    </footer>
+
+    <script>
+        document.getElementById('search').addEventListener('input', function() {
+            alert('Search feature coming soon!');
+        });
+    </script>
+
+</body>
+</html>
